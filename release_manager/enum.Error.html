@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Error` enum in crate `release_manager`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Error">
+
+    <title>release_manager::Error - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum Error</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.IO">IO</a><a href="#variant.TomlRead">TomlRead</a><a href="#variant.TomlWrite">TomlWrite</a><a href="#variant.Zip">Zip</a><a href="#variant.ZipPath">ZipPath</a><a href="#variant.PathString">PathString</a><a href="#variant.InvalidTarget">InvalidTarget</a><a href="#variant.PackageMissing">PackageMissing</a><a href="#variant.NameMissing">NameMissing</a><a href="#variant.VersionMissing">VersionMissing</a><a href="#variant.NotString">NotString</a><a href="#variant.NotTable">NotTable</a><a href="#variant.RePublish">RePublish</a><a href="#variant.FailedBuilds">FailedBuilds</a><a href="#variant.Config">Config</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Display">Display</a><a href="#impl-From%3CIOError%3E">From&lt;IOError&gt;</a><a href="#impl-From%3CTomlReadError%3E">From&lt;TomlReadError&gt;</a><a href="#impl-From%3CTomlWriteError%3E">From&lt;TomlWriteError&gt;</a><a href="#impl-From%3CZipError%3E">From&lt;ZipError&gt;</a><a href="#impl-From%3CStripPrefixError%3E">From&lt;StripPrefixError&gt;</a></div></div><p class='location'><a href='index.html'>release_manager</a></p><script>window.sidebarCurrent = {name: 'Error', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>release_manager</a>::<wbr><a class="enum" href=''>Error</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/release_manager/error.rs.html#24-55' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Error {
+    IO(<a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">IOError</a>),
+    TomlRead(<a class="struct" href="https://docs.rs/toml/0.4/toml/de/struct.Error.html" title="struct toml::de::Error">TomlReadError</a>),
+    TomlWrite(<a class="enum" href="https://docs.rs/toml/0.4/toml/ser/enum.Error.html" title="enum toml::ser::Error">TomlWriteError</a>),
+    Zip(ZipError),
+    ZipPath,
+    PathString,
+    InvalidTarget,
+    PackageMissing,
+    NameMissing,
+    VersionMissing,
+    NotString,
+    NotTable,
+    RePublish,
+    FailedBuilds,
+    Config,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.IO" class="variant small-section-header"><a href="#variant.IO" class="anchor field"></a><span id='IO.v' class='invisible'><code>IO(<a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">IOError</a>)</code></span></span><div class='docblock'><p>Error performing io</p>
+</div><span id="variant.TomlRead" class="variant small-section-header"><a href="#variant.TomlRead" class="anchor field"></a><span id='TomlRead.v' class='invisible'><code>TomlRead(<a class="struct" href="https://docs.rs/toml/0.4/toml/de/struct.Error.html" title="struct toml::de::Error">TomlReadError</a>)</code></span></span><div class='docblock'><p>Error reading from TOML strings</p>
+</div><span id="variant.TomlWrite" class="variant small-section-header"><a href="#variant.TomlWrite" class="anchor field"></a><span id='TomlWrite.v' class='invisible'><code>TomlWrite(<a class="enum" href="https://docs.rs/toml/0.4/toml/ser/enum.Error.html" title="enum toml::ser::Error">TomlWriteError</a>)</code></span></span><div class='docblock'><p>Error writing to TOML strings</p>
+</div><span id="variant.Zip" class="variant small-section-header"><a href="#variant.Zip" class="anchor field"></a><span id='Zip.v' class='invisible'><code>Zip(ZipError)</code></span></span><div class='docblock'><p>Error while zipping file</p>
+</div><span id="variant.ZipPath" class="variant small-section-header"><a href="#variant.ZipPath" class="anchor field"></a><span id='ZipPath.v' class='invisible'><code>ZipPath</code></span></span><div class='docblock'><p>Zip placement path doesn&#39;t exist</p>
+</div><span id="variant.PathString" class="variant small-section-header"><a href="#variant.PathString" class="anchor field"></a><span id='PathString.v' class='invisible'><code>PathString</code></span></span><div class='docblock'><p>Path could not be converted to string</p>
+</div><span id="variant.InvalidTarget" class="variant small-section-header"><a href="#variant.InvalidTarget" class="anchor field"></a><span id='InvalidTarget.v' class='invisible'><code>InvalidTarget</code></span></span><div class='docblock'><p>Target specified is not supported</p>
+</div><span id="variant.PackageMissing" class="variant small-section-header"><a href="#variant.PackageMissing" class="anchor field"></a><span id='PackageMissing.v' class='invisible'><code>PackageMissing</code></span></span><div class='docblock'><p>Target crate has no [package] section</p>
+</div><span id="variant.NameMissing" class="variant small-section-header"><a href="#variant.NameMissing" class="anchor field"></a><span id='NameMissing.v' class='invisible'><code>NameMissing</code></span></span><div class='docblock'><p>Target crate has no name</p>
+</div><span id="variant.VersionMissing" class="variant small-section-header"><a href="#variant.VersionMissing" class="anchor field"></a><span id='VersionMissing.v' class='invisible'><code>VersionMissing</code></span></span><div class='docblock'><p>Target crate has no version</p>
+</div><span id="variant.NotString" class="variant small-section-header"><a href="#variant.NotString" class="anchor field"></a><span id='NotString.v' class='invisible'><code>NotString</code></span></span><div class='docblock'><p>Expected a string (when parsing toml)</p>
+</div><span id="variant.NotTable" class="variant small-section-header"><a href="#variant.NotTable" class="anchor field"></a><span id='NotTable.v' class='invisible'><code>NotTable</code></span></span><div class='docblock'><p>Expected a table (when parsing toml)</p>
+</div><span id="variant.RePublish" class="variant small-section-header"><a href="#variant.RePublish" class="anchor field"></a><span id='RePublish.v' class='invisible'><code>RePublish</code></span></span><div class='docblock'><p>Cannot publish already published crate</p>
+</div><span id="variant.FailedBuilds" class="variant small-section-header"><a href="#variant.FailedBuilds" class="anchor field"></a><span id='FailedBuilds.v' class='invisible'><code>FailedBuilds</code></span></span><div class='docblock'><p>Some builds failed</p>
+</div><span id="variant.Config" class="variant small-section-header"><a href="#variant.Config" class="anchor field"></a><span id='Config.v' class='invisible'><code>Config</code></span></span><div class='docblock'><p>Failed to parse Config</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#23' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-Display' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-Display' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#57-77' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Error.html" title="struct core::fmt::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#58-76' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-From%3CIOError%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">IOError</a>&gt; for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-From%3CIOError%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#79-83' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class="struct" href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html" title="struct std::io::error::Error">IOError</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#80-82' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CTomlReadError%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="https://docs.rs/toml/0.4/toml/de/struct.Error.html" title="struct toml::de::Error">TomlReadError</a>&gt; for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-From%3CTomlReadError%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#85-89' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-1' class="method"><span id='from.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class="struct" href="https://docs.rs/toml/0.4/toml/de/struct.Error.html" title="struct toml::de::Error">TomlReadError</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#86-88' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CTomlWriteError%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="enum" href="https://docs.rs/toml/0.4/toml/ser/enum.Error.html" title="enum toml::ser::Error">TomlWriteError</a>&gt; for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-From%3CTomlWriteError%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#91-95' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-2' class="method"><span id='from.v-2' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: <a class="enum" href="https://docs.rs/toml/0.4/toml/ser/enum.Error.html" title="enum toml::ser::Error">TomlWriteError</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#92-94' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CZipError%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;ZipError&gt; for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-From%3CZipError%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#97-101' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-3' class="method"><span id='from.v-3' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(err: ZipError) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#98-100' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div><h3 id='impl-From%3CStripPrefixError%3E' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.StripPrefixError.html" title="struct std::path::StripPrefixError">StripPrefixError</a>&gt; for <a class="enum" href="../release_manager/enum.Error.html" title="enum release_manager::Error">Error</a></code><a href='#impl-From%3CStripPrefixError%3E' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#103-107' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from-4' class="method"><span id='from.v-4' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(_: <a class="struct" href="https://doc.rust-lang.org/nightly/std/path/struct.StripPrefixError.html" title="struct std::path::StripPrefixError">StripPrefixError</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/release_manager/error.rs.html#104-106' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "release_manager";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
